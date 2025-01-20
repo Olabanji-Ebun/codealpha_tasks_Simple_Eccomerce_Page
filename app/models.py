@@ -2,9 +2,20 @@ from django.db import models
 
 # Create your models here.
 
+CATEGORY_CHOICES = (
+    ('CR', 'Curd'),
+    ('ML', 'Milk'),
+    ('LS', 'Lassi'),
+    ('MS', 'Milkshake'),
+    ('PN', 'Paneer'),
+    ('GH', 'Ghee'),
+    ('CZ', 'Cheese'),
+    ('1C', 'Ice-Creams'),
+)
+
 class Product(models.Model):
     title = models.CharField(max_length=100)
-    selling_pricc = models.FloatField()
+    selling_price = models.FloatField()
     discounted_price = models.FloatField()
     description = models.TextField()
     composition = models.TextField(default='')
