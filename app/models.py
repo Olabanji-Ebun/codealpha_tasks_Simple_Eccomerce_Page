@@ -10,7 +10,7 @@ CATEGORY_CHOICES = (
     ('PN', 'Paneer'),
     ('GH', 'Ghee'),
     ('CZ', 'Cheese'),
-    ('1C', 'Ice-Creams'),
+    ('IC', 'Ice-Creams'),
 )
 
 class Product(models.Model):
