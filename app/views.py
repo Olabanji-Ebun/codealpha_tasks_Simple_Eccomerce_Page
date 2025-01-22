@@ -8,10 +8,22 @@ from . models import Product
 def home(request):
     return render(request, "app/home.html")
 
+def about(request):
+    return render(request, "app/about.html")
+
+def contact(request):
+    return render(request, "app/contact.html")
+
 class CategoryView(View):
     def get(self, request,val):
         product = Product.objects.filter(category=val)
         title = Product.objects.filter(category=val).values('title')
+        return render(request, "app/category.html",locals())
+
+class CategoryTitle(View):
+    def get(self, request,val):
+        product = Product.objects.filter(title=val)
+        title = Product.objects.filter(category=product[0].category).values('title').annotate(total=Count('title'))
         return render(request, "app/category.html",locals())
 
 class ProductDetail(View):

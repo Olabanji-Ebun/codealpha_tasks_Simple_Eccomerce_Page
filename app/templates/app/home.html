@@ -40,7 +40,9 @@
     </div>
   </div>
 </div>
-{% endblock banner-slider %} {% block information %}
+{% endblock banner-slider %}
+
+{% block information %}
 <div class="container">
   <div class="row bg-success text-center p-5 text-white border-bottom shadow">
     <h1>Products</h1>
@@ -53,7 +55,9 @@
     </small>
   </div>
 </div>
-{% endblock information %} {% block main-content %}
+{% endblock information %}
+
+{% block main-content %}
 <div class="container">
   <h2 class="text-center">Dairy Products</h2>
   <br /><br />
@@ -69,7 +73,7 @@
           "
         >
           <div class=".goodnesssec buttermilk smbg">
-            <a href="#" style="text-decoration: none !important">
+            <a href="{% url 'category' 'GH' %}" style="text-decoration: none !important">
               <div class="goodnessseccont text-center">
                 <img
                   src="{% static 'app/images/product/buffalo-ghee.png' %}"
@@ -94,7 +98,7 @@
           "
         >
           <div class=".goodnesssec buttermilk curdbgpro">
-            <a href="#" style="text-decoration: none !important">
+            <a href="{% url 'category' 'CR' %}" style="text-decoration: none !important">
               <div class="goodnessseccont text-center">
                 <img
                   src="{% static 'app/images/product/curd-total.png' %}"
@@ -119,7 +123,7 @@
           "
         >
           <div class=".goodnesssec buttermilk buttermilk">
-            <a href="#" style="text-decoration: none !important">
+            <a href="{% url 'category' 'IC' %}" style="text-decoration: none !important">
               <div class="goodnessseccont text-center">
                 <img
                   src="{% static 'app/images/product/kulfi.png' %}"
@@ -127,7 +131,7 @@
                   alt="Kulfi"
                   width="50%"
                 />
-                <p class="mlkpro">Kulfi</p>
+                <p class="mlkpro">Ice-Creams</p>
               </div>
             </a>
           </div>
@@ -148,7 +152,7 @@
       "
     >
       <div class=".goodnesssec buttermilk smbg">
-        <a href="#" style="text-decoration: none !important">
+        <a href="{% url 'category' 'MS' %}" style="text-decoration: none !important">
           <div class="goodnessseccont text-center">
             <img
               src="{% static 'app/images/product/milk-shake-chocolate.png' %}"
@@ -173,7 +177,7 @@
       "
     >
       <div class=".goodnesssec buttermilk curdbgpro">
-        <a href="#" style="text-decoration: none !important">
+        <a href="{% url 'category' 'ML' %}" style="text-decoration: none !important">
           <div class="goodnessseccont text-center">
             <img
               src="{% static 'app/images/product/cow-milk.png' %}"
@@ -198,7 +202,7 @@
       "
     >
       <div class=".goodnesssec buttermilk buttermilk">
-        <a href="#" style="text-decoration: none !important">
+        <a href="{% url 'category' 'IC' %}" style="text-decoration: none !important">
           <div class="goodnessseccont text-center">
             <img
               src="{% static 'app/images/product/icbars.png' %}"
