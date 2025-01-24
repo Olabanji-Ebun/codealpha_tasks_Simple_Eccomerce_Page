@@ -42,7 +42,7 @@ class CustomerRegistrationView(View):
             form.save()
             messages.success(request, "Congratulations! User Registered Successfully")
         else:
-            messages.error(request, "Invalid Input Data")
+            messages.warning(request, "Invalid Input Data")
         return render(request, 'app/customerregistration.html', locals())
 
 
