@@ -62,5 +62,8 @@ class ProfileView(View):
 
             reg = Customer(user=user,name=name,locality=locality,city=city,mobile=mobile,state=state,zipcode=zipcode)
             reg.save()
+            messages.success(request, "Congratulations! Profile Save Successful")
+        else:
+            messages.warning(request, "Invalid Input Data")
         return render(request, 'app/profile.html',locals())
 

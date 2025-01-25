@@ -29,6 +29,15 @@
                     {% endfor %}
                 {% endif %}
 
+                {% if messages %}
+                    {% for msg in messages %}
+                    	<div class="alert alert-{{ msg.tags }}" role="alert">
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+
+                {% endif %}
+
             </form>
         </div>
     </div>
