@@ -67,3 +67,15 @@ class ProfileView(View):
             messages.warning(request, "Invalid Input Data")
         return render(request, 'app/profile.html',locals())
 
+
+def address(request):
+    add = Customer.objects.filter(user=request.user)
+    return render(request, 'app/address.html',locals())
+
+class UpdateAddressView(View):
+    def get(self, request, pk):
+        form = CustomerProfileForm()
+        return render(request, 'app/updateAddress.html', locals())
+    def post(self, request, pk):
+        form = CustomerProfileForm(request.POST)
+        return render(request, 'app/updateAddress.html', locals())
