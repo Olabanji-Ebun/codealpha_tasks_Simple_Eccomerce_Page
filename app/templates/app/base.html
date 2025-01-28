@@ -26,8 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="{% static "app/images/neel.png" %}" width="70" height="50"
-          />
+          <img src="{% static "app/images/neel.png" %}" width="70" height="50"/>
         </a>
         <button
           class="navbar-toggler"
@@ -36,12 +35,12 @@
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% if request.user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
@@ -89,15 +88,7 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown mx-2">
-            <a
-              class="nav-link dropdown-toggle text-white"
-              href="#"
-              id="profileDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              >Ebun</a
-            >
+            <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ebun</a>
             <ul class="dropdown-menu" aria-labelledby="profileDropdown">
               <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
               <li><a class="dropdown-item" href="#">Orders</a></li>
@@ -119,7 +110,7 @@
           <li class="nav-item mx-2">
             <a href="#" class="nav-link text-white">Wishlist 4</a>
           </li>
-
+            {% else %}
           <li class="nav-item mx-2">
             <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
           </li>
@@ -127,6 +118,7 @@
           <li class="nav-item mx-2">
             <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
           </li>
+            {% endif %}
         </ul>
       </div>
     </nav>
