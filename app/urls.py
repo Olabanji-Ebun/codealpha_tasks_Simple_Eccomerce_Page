@@ -20,6 +20,10 @@ urlpatterns = [
     path('cart/', views.show_cart, name='showcart'),
     path('checkout/', views.show_cart, name='checkout'),
 
+    path('pluscart/', views.plus_cart),
+    path('minuscart/', views.minus_cart),
+    path('removecart/', views.remove_cart),
+
     #login authentication
     path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'),
     path('accounts/login/', auth_view.LoginView.as_view(template_name='app/login.'
