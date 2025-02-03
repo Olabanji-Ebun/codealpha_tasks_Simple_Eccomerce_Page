@@ -62,7 +62,7 @@
 {% block payment-gateway %}
 <script>
     var options = {
-        "key": "rzp_test_2TUHCJnGDCobwu", // Enter the Key ID generated from the Dashboard
+        "key": "rzp_test_LxRqAytASm1RfA", // Enter the Key ID generated from the Dashboard
         "amount": "{{razoramount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
         "currency": "INR",
         "name": "Mavericks",
@@ -75,7 +75,7 @@
             //alert(response.razorpay_payment_id);
             //alert(response.razorpay_order_id);
             //alert(response.razorpay_signature);
-            window.location.href = `http://localhost:8000/paymentdone?order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}&cust_id=${form.elements["custid"].value}`;
+            window.location.href = `http://localhost:8000/paymentdone?order_id=${response.razorpay_order_id}&payment_id=${response.razorpay_payment_id}&cust_id=${form.elements["custid"].value}`
         },
         "theme": {
             "color": "#3399cc"

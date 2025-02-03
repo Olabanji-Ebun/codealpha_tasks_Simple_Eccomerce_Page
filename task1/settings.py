@@ -130,3 +130,6 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+RAZOR_KEY_ID = "rzp_test_LxRqAytASm1RfA"
+RAZOR_KEY_SECRET = "SIXsKXQ4NR89dHUZNs3GNVur"
