@@ -79,7 +79,7 @@ $('.plus-wishlist').click(function(){
     var id=$(this).attr("pid").toString();
     $.ajax({
         type:"GET",
-        url:"/pluswishlist",
+        url:"/plus_wishlist",
         data:{
             prod_id:id
         },
@@ -95,7 +95,7 @@ $('.minus-wishlist').click(function(){
     var id=$(this).attr("pid").toString();
     $.ajax({
         type:"GET",
-        url:"/minuswishlist",
+        url:"/minus_wishlist",
         data:{
             prod_id:id
         },
