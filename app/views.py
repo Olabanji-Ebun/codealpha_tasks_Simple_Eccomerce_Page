@@ -77,7 +77,7 @@ class ProductDetail(View):
             wishitem = len(Wishlist.objects.filter(user=request.user))
         return render(request, "app/productdetail.html", locals())
 
-@method_decorator(login_required, name="dispatch")
+
 class CustomerRegistrationView(View):
     def get(self, request):
         form = CustomerRegistrationForm()
@@ -185,6 +185,25 @@ def show_cart(request):
         totalitem = len(Cart.objects.filter(user=request.user))
         wishitem = len(Wishlist.objects.filter(user=request.user))
     return render(request, 'app/addtocart.html', locals())
+
+@login_required
+def show_wishlist(request):
+    user = request.user
+    totalitem = 0
+    wishitem = 0
+
+    if request.user.is_authenticated:
+        totalitem = Wishlist.objects.filter(user=request.user).count()
+        wishitem = totalitem  # Same count as total wishlist items
+
+    # Fetch wishlist items with related products
+    wishlist_items = Wishlist.objects.filter(user=user).select_related('product')
+
+    return render(request, "app/wishlist.html", {
+        "wishlist_items": wishlist_items,
+        "totalitem": totalitem,
+        "wishitem": wishitem
+    })
 
 @method_decorator(login_required, name="dispatch")
 class checkout(View):

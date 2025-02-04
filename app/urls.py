@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 from django.urls import path
 from . import views
 from .forms import LoginForm, MyPasswordResetForm, MyPasswordChangeForm, MySetPasswordForm
@@ -22,6 +23,7 @@ urlpatterns = [
     path('paymentdone/', views.payment_done, name='paymentdone'),
     path('orders/', views.orders, name='orders'),
     path('search/', views.search, name='search'),
+    path('wishlist/', views.show_wishlist, name='showwishlist'),
 
     path('pluscart/', views.plus_cart),
     path('minuscart/', views.minus_cart),
@@ -49,4 +51,8 @@ urlpatterns = [
 
     path('password-reset-complete/', auth_view.PasswordResetCompleteView.as_view(template_name='app/password_reset_complete.html'), name='password_reset_complete'),
 
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = 'Neel Diary'
+admin.site.site_title = 'Neel Diary'
+admin.site.site_index_title = 'Welcome To Neel Diary Shop'

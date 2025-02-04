@@ -82,7 +82,7 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown mx-2">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ebun</a>
+            <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="text-capitalize">{{ request.user }}</span></a>
             <ul class="dropdown-menu" aria-labelledby="profileDropdown">
               <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
               <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
@@ -102,7 +102,7 @@
           </li>
 
           <li class="nav-item mx-2">
-            <a href="#" class="nav-link text-white"><i class="fa fa-heart"></i> <span class="badge bg-danger">{% if wishitem > 0 %} {{ wishitem }} {% endif %}</span></a>
+            <a href="{% url 'showwishlist' %}" class="nav-link text-white"><i class="fa fa-heart"></i> <span class="badge bg-danger">{% if wishitem > 0 %} {{ wishitem }} {% endif %}</span></a>
           </li>
             {% else %}
           <li class="nav-item mx-2">
