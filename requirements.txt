@@ -1,1 +1,17 @@
 fontawesomefree==6.0.0
+beautifulsoup4==4.13.3
+distlib==0.3.9
+Django==5.1.5
+django-bootstrap==24.4
+filelock==3.16.1
+pillow==11.1.0
+pip==25.0
+platformdirs==4.3.6
+wheel==0.45.1
+virtualenv==20.29.0
+tzdata==2024.2
+sqlparse==0.5.3
+asgiref==3.8.1
+typing_extensions==4.12.2
+soupsieve==2.6
+pygame==2.6.1
