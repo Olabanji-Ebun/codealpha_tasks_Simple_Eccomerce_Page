@@ -46,9 +46,7 @@ Database: `Sqlite3`
    pip install -r requirements.txt
    ```
 
-    ```bash
-   cd socials
-   ```
+
 
 
 4. Make migrations/ Create db.sqlite3
